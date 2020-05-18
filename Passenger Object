@@ -1,0 +1,7 @@
+Passenger Name	      Text	
+Passenger Phone	      Phone	
+Passenger Email Id	  Email	
+Gender	              Picklist	Male
+		                            Female
+Age	                  Number	
+Bus ID	              Text	
