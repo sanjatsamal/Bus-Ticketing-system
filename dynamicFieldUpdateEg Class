@@ -1,0 +1,37 @@
+public with sharing class dynamicFieldUpdateEg {
+  
+    public String selectedField {get; set;}
+    public String fieldValue {get; set;}
+    public String accName {get; set;}
+
+    // Get all fields if string type and which is updateable dynamically by using schema class.
+    public List getAllAccField() {
+        List  options = new List();
+        Map <String, Schema.SObjectField> fieldMap = 
+ Schema.getGlobalDescribe().get('Account').getDescribe().fields.getMap();
+        Map<String, String> preDefinedMap = new Map<String, String>();
+        for(Schema.SObjectField sfield : fieldMap.Values()){
+            String strType = string.valueOf(fieldMap.get(sfield.getdescribe().getname()).getDescribe().getType());
+            if(strType == 'STRING' && sfield.getdescribe().isAccessible() ==  true && 
+               sfield.getdescribe().isUpdateable() == true) {
+                   options.add(new SelectOption(sfield.getdescribe().getname(), sfield.getdescribe().getlabel()));
+               }
+        }
+        return options;
+    }
+    
+    public void saveData() {
+        try {
+            Passenger__c Png = new Passenger__c();
+            Png.Name = PngName;
+            Png.PassengerPhone__c = Passenger Phone;
+            Png.Passenger Email Id__c = Passenger Email Id;
+            Png.Age__c = Age;
+            Png.put(Gender, fieldValue);
+            Png.Bus ID__c =[Select id from Bus where status = 'Ready' ] LIMIT 1;
+            insert Png ;
+        } catch (Exception ex) {
+            system.debug(ex.getMessage());
+        }
+    }
+}
