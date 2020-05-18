@@ -1,0 +1,16 @@
+# Bus Object
+
+Fields	              Field Data Type	       Value
+			
+	Bus Number	            Number	
+	Bus Name	              Text	
+	Bus Timing	            Date & Time	
+	Source	                Text	
+	Destination	            Text	
+	Category	              Picklist	          Seater
+			                                        Semi Seater
+			                                        Sleeper
+			                                        Semi Sleeper
+	
+  Status		              Picklist            Under Maintance
+			                                        Ready
