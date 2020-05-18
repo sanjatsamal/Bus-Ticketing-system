@@ -1,0 +1,32 @@
+<apex:page controller="dynamicFieldUpdateEg">
+   
+    <apex:form>
+    <table>
+     <tr>
+      <th> Enter Passenger Name</th>
+      <th> Passenger Phone </th>
+      <th> Passenger Email Id </th>
+      <th> Gender </th>
+      <th> Age </th>
+      <th> Bus ID</th>
+      <th> Action </th>
+     </tr>
+    <tr>
+     <td>
+      <apex:inputText value="{!accName}"></apex:inputText>
+     </td>
+     <td> 
+      <apex:selectList size="1" value="{!selectedField}">
+        <apex:selectOptions value="{!AllAccField}"></apex:selectOptions> 
+      </apex:selectList>
+     </td>
+     <td>
+      <apex:inputText value="{!fieldValue}"></apex:inputText>
+     </td>
+     <td>
+      <apex:commandButton action = "{!saveData}" value="Save"/>
+     </td>
+   </tr>
+  </table>
+ </apex:form>
+</apex:page>
