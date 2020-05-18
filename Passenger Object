@@ -5,3 +5,6 @@ Gender	              Picklist	Male
 		                            Female
 Age	                  Number	
 Bus ID	              Text	
+
+
+Which will be a dynamic object where the records will be saved as the passenger fill the details in the VF page while booking the ticket.
